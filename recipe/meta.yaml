@@ -17,6 +17,8 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
+    - wheel
     # needed to get pinning
     - dbus 1.*
   run:
