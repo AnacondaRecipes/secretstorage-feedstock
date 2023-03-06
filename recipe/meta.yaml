@@ -10,7 +10,7 @@ source:
 
 build:
   number: 1
-  skip: true  # [win or py<35]
+  skip: true  # [win or py<36]
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
@@ -24,12 +24,17 @@ requirements:
   run:
     - python
     - jeepney >=0.6
-    - cryptography
+    - cryptography >=2.0
     - dbus >=1.13.18,<2.0a0
 
 test:
   imports:
     - secretstorage
+  requires:
+    - pip
+  commands:
+    - pip check
+
 
 about:
   home: https://github.com/mitya57/secretstorage
